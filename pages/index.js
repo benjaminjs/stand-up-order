@@ -38,7 +38,7 @@ export default function Home() {
               style={{
                 width: 400,
                 padding: 10,
-                background: "#444",
+                background: "#999",
                 marginTop: 10,
               }}
             >
