@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [listText, setListText] = useState("");
-  const list = listText.split(",");
+  const list = listText ? listText.split(",") : [];
 
   const randomRandomizedList = list.sort(() => Math.random() - 0.5);
 
@@ -20,12 +20,30 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Standup Order!</h1>
         <textarea
+          style={{
+            width: 400,
+            height: "100px",
+            fontSize: 14,
+            padding: 10,
+            marginTop: 30,
+          }}
           onChange={(e) => setListText(e.target.value)}
           value={listText}
+          placeholder="Enter names separated by commas"
         />
-        <ol>
+        <ol style={{ marginLeft: -40 }}>
           {randomRandomizedList.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li
+              key={index}
+              style={{
+                width: 400,
+                padding: 10,
+                background: "#444",
+                marginTop: 10,
+              }}
+            >
+              {item}
+            </li>
           ))}
         </ol>
       </main>
