@@ -23,9 +23,11 @@ export default function Home() {
           onChange={(e) => setListText(e.target.value)}
           value={listText}
         />
-        {randomRandomizedList.map((item, index) => (
-          <div key={index}>{item}</div>
-        ))}
+        <ol>
+          {randomRandomizedList.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ol>
       </main>
 
       <footer className={styles.footer}></footer>
